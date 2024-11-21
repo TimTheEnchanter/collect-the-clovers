@@ -34,7 +34,7 @@ let hero2 = sprites.create(img`
     .ddb44444444bdd.
     dddbddddddddbddd
     `, SpriteKind.Player)
-controller.moveSprite(hero)
+controller.player1.moveSprite(hero)
 controller.player2.moveSprite(hero2)
 hero.setStayInScreen(true)
 game.onUpdateInterval(5000, function () {
