@@ -10,9 +10,32 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let bee: Sprite = null
 let clover: Sprite = null
+game.splash("Collect the Clovers")
 scene.setBackgroundImage(assets.image`background`)
 let hero = sprites.create(assets.image`hero`, SpriteKind.Player)
+let hero2 = sprites.create(img`
+    dd..............
+    ddd.........dd..
+    dd3d.......dddd.
+    .d33d.....d3ddd.
+    .dd33....d33ddd.
+    ..dd3d...33dd...
+    ...ddddddddd....
+    ...ddbbdbbd.....
+    ....dbfdfbd.....
+    ...dddd3dddd....
+    ...dddbdbddd....
+    ....ddddddd.....
+    ....bdddddb.....
+    ..dd6ff66fff6d..
+    ..d66c666fc66d..
+    .dd4444444444dd.
+    .ddd44444444ddd.
+    .ddb44444444bdd.
+    dddbddddddddbddd
+    `, SpriteKind.Player)
 controller.moveSprite(hero)
+controller.player2.moveSprite(hero2)
 hero.setStayInScreen(true)
 game.onUpdateInterval(5000, function () {
     clover = sprites.createProjectileFromSide(img`
